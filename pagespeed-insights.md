@@ -124,5 +124,11 @@ the_block('image', array(
 Các size này chỉ là ước tính size gốc, thực tế WordPress sử dụng `srcset` để xác định kích thước màn hình/file ảnh và load file tỷ lệ tương ứng. Tuy vậy, để đáp ứng ảnh mobile hiển thị, nên set size mặc đinh về `thumbnail` hoặc `medium`.
 
 ```
-<img width="1024" height="683" src="https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1024x683.jpg" class="wp-post-image image__img" alt="" srcset="https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1024x683.jpg 1024w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-300x200.jpg 300w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-768x512.jpg 768w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1536x1024.jpg 1536w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-2048x1366.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px">
+<img width="1024" height="683" 
+src="https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1024x683.jpg" 
+class="wp-post-image image__img" 
+alt="" 
+srcset="https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1024x683.jpg 1024w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-300x200.jpg 300w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-768x512.jpg 768w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1536x1024.jpg 1536w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-2048x1366.jpg 2048w" 
+sizes="(max-width: 1024px) 100vw, 1024px"
+>
 ```
