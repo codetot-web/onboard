@@ -93,3 +93,36 @@ export default el => {
   on('scroll', throttle(init, 300, window)
 }
 ```
+
+## Xử lý file ảnh
+
+### Nén ảnh trong thư mục /themes/ child theme
+
+Các ảnh dùng làm decor, ảnh nền trang trí trong theme, child theme, plugin đều cần được tối ưu trước khi upload lên.
+
+https://tinyjpg.com
+https://tinypng.com
+
+Các ảnh khi cho lên cần resize sát khung hiển thị lớn nhất có thể, ví dụ 30x30px thì resize lại cho khớp, tránh upload ảnh 300x300px gây tốn tài nguyên.
+
+## Nén ảnh trên website
+
+Sử dụng plugin tùy theo từng khách hàng, có thể xin công ty API key bản premium để nén ảnh tốt hơn.
+
+Chế độ nén đề xuất: Lossless (ít mất chất lượng)
+
+## Kích thước ảnh
+
+Nếu xác định sai kích thước ảnh sẽ rất dễ bị tính điểm trừ.
+
+```php
+the_block('image', array(
+  'size' => 'thumbnail'
+));
+```
+
+Các size này chỉ là ước tính size gốc, thực tế WordPress sử dụng `srcset` để xác định kích thước màn hình/file ảnh và load file tỷ lệ tương ứng. Tuy vậy, để đáp ứng ảnh mobile hiển thị, nên set size mặc đinh về `thumbnail` hoặc `medium`.
+
+```
+<img width="1024" height="683" src="https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1024x683.jpg" class="wp-post-image image__img" alt="" srcset="https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1024x683.jpg 1024w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-300x200.jpg 300w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-768x512.jpg 768w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-1536x1024.jpg 1536w, https://dieuho.codetot.work/wp-content/uploads/2021/08/post-1-1-2048x1366.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px">
+```
