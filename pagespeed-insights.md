@@ -87,11 +87,9 @@ export default el => {
         
         slider = new Carousel(sliderEl, sliderOptions)
      }
-    
-    // Init slider...
   }
   
   on('load', throttle(init, 300), window)
-  on('scroll, throttle(init, 300, window)
+  on('scroll', throttle(init, 300, window)
 }
 ```
