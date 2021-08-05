@@ -66,7 +66,7 @@ the_block('default-section', array(
 ```js
 import { select, loadNoscriptContent } from 'lib/dom'
 import { throttle } from 'lib/utils'
-import Carousel from 'lib/carousel
+import Carousel from 'lib/carousel'
 
 export default el => {
   const contentEl = select('.js-content', el)
