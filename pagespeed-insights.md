@@ -100,8 +100,8 @@ export default el => {
 
 Các ảnh dùng làm decor, ảnh nền trang trí trong theme, child theme, plugin đều cần được tối ưu trước khi upload lên.
 
-https://tinyjpg.com
-https://tinypng.com
+- https://tinyjpg.com
+- https://tinypng.com
 
 Các ảnh khi cho lên cần resize sát khung hiển thị lớn nhất có thể, ví dụ 30x30px thì resize lại cho khớp, tránh upload ảnh 300x300px gây tốn tài nguyên.
 
