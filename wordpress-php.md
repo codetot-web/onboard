@@ -69,3 +69,33 @@ function codetot_get_post_query($custom_post_args) {
   return new WP_Query($post_args);
 }
 ```
+
+### Bóc tách $args ra để dễ dàng thêm bớt nếu cần
+
+```php
+function codetot_get_post_args($categories = []) {
+  $post_args = array(
+    'post_type' => 'post',
+    'posts_per_page' => -1,
+  );
+  $tax_query = array();
+
+  if (!empty($categories)) {
+    $tax_query[] = array(
+      'taxonomy' => 'course_category',
+      'field' => 'term_id',
+      'terms' => $categories
+    );
+  }
+
+  if (count($tax_query) > 1) {
+    $tax_query['relation'] = 'AND';
+  }
+
+  if (!empty($tax_query)) {
+    $post_args['tax_query'] = $tax_query;
+  }
+
+  return $post_args;
+}
+```
