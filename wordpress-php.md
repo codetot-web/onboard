@@ -70,6 +70,32 @@ function codetot_get_post_query($custom_post_args) {
 }
 ```
 
+### Điều kiện bọc ngoài bằng 1 element hay wrapper div cho dễ đọc
+
+- Case thường gặp: có thể có link hoặc không có link.
+- Cách xử lý: Tạo 1 biến riêng và set điều kiện cho output ra
+
+```php
+<?php
+ob_start();
+the_block('image', array(
+  'image' => $image,
+  'class' => 'image--cover image--square logo-grid__image',
+  'size' => 'medium'
+));
+$content = ob_get_clean();
+
+if (!empty($link)) {
+  printf('<a class="logo-grid__link" href="%1$s">%3$s</a>,
+    esc_attr($link),
+    $content
+  );
+} else {
+ // Không nên echo $content thẳng ra, mà tạo 1 div tương đương tiến hành css cho cả __link lẫn __block
+  printf('<div class="logo-grid__block">%s</div>, $content);
+}
+```
+
 ### Bóc tách $args ra để dễ dàng thêm bớt nếu cần
 
 ```php
