@@ -130,7 +130,7 @@ Tài liệu tham khảo: https://developer.wordpress.org/themes/theme-security/d
 
 Các giá trị thu thập được từ $_GET, $_POST hay từ data người dùng nhập đều cần xử lý qua các function để hạn chế tấn công.
 
-```
+```php
 sanitize_email()
 sanitize_file_name()
 sanitize_html_class()
@@ -151,7 +151,7 @@ wp_filter_nohtml_kses()
 
 Các function `esc_`
 
-```
+```php
 esc_html()// <h2><?php echo esc_html( $title ); ?></h2>
 esc_url() // <img src="<?php echo esc_url( $great_user_picture_url ); ?>" />
 esc_js()
@@ -161,17 +161,17 @@ esc_textarea() // <textarea><?php echo esc_textarea( $text ); ?></textarea>
 
 Ngoài ra còn có escape cho các phần language cần dịch:
 
-```
+```php
 esc_html__()
 esc_html_e()
 esc_html_x()
 esc_attr__()
 esc_attr_e()
 esc_attr_x()
-``
+```
 
 Và escape cho post_content:
 
-```
+```php
 echo wp_kses_post( $post_content );
 ```
