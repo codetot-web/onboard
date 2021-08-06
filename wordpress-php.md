@@ -175,3 +175,32 @@ Và escape cho post_content:
 ```php
 echo wp_kses_post( $post_content );
 ```
+
+## Output kết quả sớm nhất cho function thực thi
+
+```php
+function ct_azpet_is_hot_deal_product($start_date, $end_date) {
+  $now = current_time('Y-m-d H:i:s' );
+
+  $time_stamp_now = strtotime($now);
+  $time_stamp_start = strtotime($start_date);
+  $time_stamp_end = strtotime($end_date);
+
+  // Case 1: both start and end date were filled
+  if(!empty($start_date) && !empty($end_date) ) {
+    // Trả về kết quả sớm nhất, không cần if else nhiều điều kiện
+    return $now > $start_date && $now < $end_date;
+  }
+
+  // If empty end_date but has start_date
+  if (!empty($start_date) && empty($end_date)) {
+    return $time_stamp_start < $time_stamp_now;
+  }
+
+  // If empty start_date but has end_date
+  if (empty($start_date) && !empty($end_date)) {
+    return $time_stamp_end > $time_stamp_now;
+  }
+
+  return false;
+}
