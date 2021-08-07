@@ -7,3 +7,4 @@
 - [Các function mở rộng do công ty phát triển](wordpress-custom-helpers.md)
 - [Sử dụng webpack trong dự án](webpack.md)
 - [Quy trình deploy](deploy.md)
+- [Triển khai animation](animation.md)
