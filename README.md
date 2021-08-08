@@ -8,3 +8,4 @@
 - [Sử dụng webpack trong dự án](webpack.md)
 - [Quy trình deploy](deploy.md)
 - [Triển khai animation](animation.md)
+- [Tùy biến WordPress child theme của CT-Bones](ct-bones-child-theme.md) 
