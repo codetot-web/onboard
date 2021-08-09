@@ -98,4 +98,5 @@ Truy cập [Circle CI codetot-clients](https://app.circleci.com/projects/project
 THEME_NAME: <tên folder theme>
 ```
 
-3. Chạy lại Circle CI cho branch develop hoặc master để kiểm tra
+3. Thêm **User SSH Key* và xóa **Deploy Key** để có thể ghi được new commit trong khi build.
+4. Chạy lại Circle CI cho branch develop hoặc master để kiểm tra
