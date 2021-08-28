@@ -1,4 +1,4 @@
-# Deploy (Đưa website/source code lên live/demo/staging
+# Deploy (Đưa website/source code lên live/demo/staging)
 
 **Định nghĩa**
 - Local: bản trên máy tính của mình
