@@ -41,7 +41,7 @@ chmod +x ./scripts/*.sh
 - Export database hiện tại bằng phpMyAdmin ra 1 file local trên máy tính
 - Drop tất cả table trong database trên phpMyAdmin (xóa hết tables nhưng không xóa database)
 - Lấy thông tin database hiện tại của website, bao gồm username, database và password. (Thông thường username và database sẽ trùng nhau)
-- Truy cập bằng SSH vào server, tìm tới thư mục chứa file .sql đã upload
+- Truy cập bằng SSH vào server, tìm tới thư mục chứa file .sql đã upload, chạy lệnh sau và nhập mật khẩu
 
 ```
 $ mysql import -u DB_USER -p DB_NAME < FILE_NAME.sql
