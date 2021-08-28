@@ -34,3 +34,22 @@ git submodule update
 # [Lỗi nếu bước 4 không tiến hành được] Set phân quyền file .sh và chạy lại bước 4
 chmod +x ./scripts/*.sh
 ```
+
+### Deploy database SQL có dung lượng lớn
+
+- Tải file SQL cần import lên thư mục dự án, vd /webapps/codetot hoặc /public_html/ trên hosting
+- Export database hiện tại bằng phpMyAdmin ra 1 file local trên máy tính
+- Drop tất cả table trong database trên phpMyAdmin (xóa hết tables nhưng không xóa database)
+- Lấy thông tin database hiện tại của website, bao gồm username, database và password. (Thông thường username và database sẽ trùng nhau)
+- Truy cập bằng SSH vào server, tìm tới thư mục chứa file .sql đã upload
+
+```
+$ mysql import -u DB_USER -p DB_NAME < FILE_NAME.sql
+Enter password:
+```
+
+> Bạn cần nhập password bằng cách paste (nên dùng chuột phải để Paste) và ấn Enter. Sau khi chạy sẽ thấy một lúc sau con trỏ chuột lại bình thường, như vậy quá trình import đã thành công.
+
+- Cấu hình table `wp_options`, tìm tới `site_url` và `home_url` đổi thành URL hiện tại (có https)
+- Kiểm tra bằng cách truy cập `/wp-admin/` và đăng nhập. Vào Settings / Permalinks lưu lại 1 lần để đảm bảo link trên các trang con không bị chết.
+- Kiểm tra cache và lưu ý xóa cache, hoặc tắt plugin cache và bật lại.
