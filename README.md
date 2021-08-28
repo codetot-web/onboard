@@ -2,6 +2,12 @@
 
 ## Mục lục
 
+Nếu bạn mới gia nhập công ty:
+
+- [Onboard tài liệu tham khảo](onboard.md)
+
+Các vấn đề chuyên môn khác:
+
 - [Khắc phục các lỗi PageSpeed phổ biến](pagespeed-insights.md)
 - [WordPress PHP Best Practices](wordpress-php.md)
 - [Các function mở rộng do công ty phát triển](wordpress-custom-helpers.md)
