@@ -4,10 +4,10 @@
 
 **Viết CSS syntax sử dụng postCSS**
 
-`postcss-mixin` viết @media (--m) {} tương tư media-query css - https://github.com/postcss/postcss-mixins
-`postcss variables` cách đặt biến CSS và sử dụng
-`postcss` nesting rules *viết lồng selector CSS - https://github.com/csstools/postcss-nesting
-`postcss-mixins` giúp viết tắt CSS - https://github.com/postcss/postcss-mixins
+- `postcss-mixin` viết @media (--m) {} tương tư media-query css - https://github.com/postcss/postcss-mixins
+- `postcss variables` cách đặt biến CSS và sử dụng
+- `postcss` nesting rules *viết lồng selector CSS - https://github.com/csstools/postcss-nesting
+- `postcss-mixins` giúp viết tắt CSS - https://github.com/postcss/postcss-mixins
 
 **BEM CSS**
 - https://codetot.net/toan-tap-ve-bem-css/
@@ -16,12 +16,12 @@
 
 ## Javascript
 
-Javascript viết thuần không cần jQuery: http://youmightnotneedjquery.com/
-nvm-windows giúp quản lý nhiều phiên bản nodejs: https://stackjava.com/nodejs/nvm-la-gi-cai-dat-nvm-tren-windows-node-js.html, bản chuẩn nên cài là bản NodeJS 12.18
+- Javascript viết thuần không cần jQuery: http://youmightnotneedjquery.com/
+- nvm-windows giúp quản lý nhiều phiên bản nodejs: https://stackjava.com/nodejs/nvm-la-gi-cai-dat-nvm-tren-windows-node-js.html, bản chuẩn nên cài là bản NodeJS 12.18
 
 ## Web Server
 
-Web server sử dụng https://laragon.org/download/index.html
+- Web server sử dụng https://laragon.org/download/index.html
 
 # Quản lý code bằng Git
 
