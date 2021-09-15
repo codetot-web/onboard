@@ -2,6 +2,12 @@
 
 To replace with custom header:
 
+1. In Customizer, you must change **Header Theme** option
+
+![Customizer](custom-header-customizer-settings.png)
+
+2. In `inc/child-theme-init.php` or `functions.php`
+
 ```php
 add_action('wp', 'child_theme_custom_theme_header');
 function child_theme_custom_theme_header() {
@@ -14,5 +20,7 @@ function child_theme_custom_theme_header() {
 		}
 	}
 ```
+
+3. Create markup
 
 Then create `blocks/header-theme.php` in your child theme.
