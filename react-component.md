@@ -37,3 +37,41 @@ export default el => {
   <div id="example-app-id"></div>
 </div>
 ```
+
+## Sử dụng dữ liệu và render dữ liệu
+
+### Array
+
+```js
+import { articleTypes } from 'lib/data/properties'
+
+const optionComponents = props => {
+  return (
+    <div>
+      <label for={props.name}>{props.label}</label>
+      <select name={props.name}>
+        <option value=''>{props.placeholder}</option>
+        {articleTypes.map(articleType => (
+          <option value={articleType.value}>{articleType.name}</option>
+        ))
+      </select>
+    </div>
+  )
+}
+```
+
+Phân biệt 2 kiểu render 1 list array dữ liệu
+
+```js
+ // Return luôn dùng () => () và sử dụng luôn
+ {articleTypes.map(articleType => (
+    <option value={articleType.value}>{articleType.name}</option>
+  ))
+
+  // Có thể kèm 1 số function nào đó rồi mới return () => {}
+  {articleTypes.map(articleType => {
+    const checked = articleType.value === currentArticleType
+  
+    return <option value={articleType.value} checked={checked}>{articleType.name}</option>
+  })
+```
