@@ -111,3 +111,44 @@ const exampleComponent = props => {
   )
 }
 ```
+
+### Lấy dữ liệu dynamic từ 1 api endpoint
+
+Trường hợp xảy ra khi ta muốn vào 1 API endpoint, ví dụ `/wp/v2/posts` để lấy ra danh sách và render nó với React.
+
+**Các lưu ý**
+
+- Biến `exampleApiConfig` nên được config thông qua PHP hay backend để có thể access theo url.
+- Nếu dữ liệu là các loại hình dữ liệu nào (array, bool true/false, string) thì `useState()` cần có định dạng tương ứng như `useState([])`, `useState({})`, `useState('')`
+- Luôn bọc điều kiện để đảm bảo dữ liệu tồn tại thì mới output ra
+- `useEffect(() => {}, [])` khi `[]` không có gì thì tức là chạy chỉ 1 lần khi render.
+
+```js
+/* global exampleApiConfig */
+import { useState, useEffect } from 'react'
+require('whatwg-fetch')
+
+const exampleComponent = props => {
+  const [cities, setCities] = useState([])
+
+  useEffect(() => {
+    fetch(exampleApiConfig.restUrl)
+      .then(res => res.json())
+      .then(res => {
+        if (res.cities) {
+          setCities(res.cities)
+        }
+      })
+  }, [])
+  
+  return (
+    <select>
+      {cities && cities.length ? cities.map(city => {
+        return (
+          <option value={city.value}>{city.name}</option>
+        )
+      } : '')
+    </select>
+  )
+}
+```
