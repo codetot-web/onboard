@@ -56,4 +56,4 @@ return new WP_REST_Response([
   'errorCode' => 404,
   'errorMessage' => esc_html__('There is no posts to display', 'text-domain')
 ], 404);
-``
+```
