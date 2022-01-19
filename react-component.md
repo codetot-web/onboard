@@ -72,6 +72,42 @@ Phân biệt 2 kiểu render 1 list array dữ liệu
   {articleTypes.map(articleType => {
     const checked = articleType.value === currentArticleType
   
-    return <option value={articleType.value} checked={checked}>{articleType.name}</option>
+    return (
+      <option value={articleType.value} checked={checked}>{articleType.name}</option>
+    )
   })
+```
+
+### Xử lý 1 dữ liệu `state`
+
+`state` là cách ta gọi 1 dữ liệu có thể được sửa chữa, thay đổi.
+
+Ví dụ:
+
+- Mở popup khi click vào nút bấm
+- Khi 1 select được chọn option thay đổi, set giá trị sẽ sử dụng cho dữ liệu cần xử lý
+- Khi click vào 1 item trong list để xóa hoặc thêm 1 item khác
+
+Các dữ liệu trước đây dùng JS để gán class, ví dụ `addClass('d-none', item)` thì với React sẽ render và tự remove thông qua `state`
+
+Lấy 1 ví dụ đơn giản với giá trị của 1 action ẩn/hiện element
+
+```js
+import { useState } from 'react'
+
+const exampleComponent = props => {
+  const [visible, setVisible] = useState(false) // set mặc định visible = false
+  
+  // Toggle
+  const handleChangeVisible = () => {
+    setVisible(!visible)
+  }
+  
+  // console để thấy khi click giá trị sẽ tự thay đổi
+  console.log(visible)
+  
+  return (
+    <button onClick={handleChangeVisible}>{'Toggle visible'}</button>
+  )
+}
 ```
