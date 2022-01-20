@@ -26,3 +26,17 @@
 Command phổ biến là `standards:check` để tự check trên máy, `standards:fix` để fix tự động 1 số lỗi (nhưng không hết), `lint` để thực thi test.
 
 Có thể lên CircleCI để xem report cụ thể và fix theo từng file.
+
+## Một số quy tắc cần tuân thủ
+
+Sử dụng `escape` và `sanitize` - bao gồm nhiều function để format dữ liệu khi thu thập từ người dùng (vd từ đường dẫn), từ input (vd nhập text).
+
+[Xem thêm](https://github.com/codetot-web/dev-guideline/blob/main/wordpress-php.md#sanitizationescaping-c%C3%A1c-gi%C3%A1-tr%E1%BB%8B-khi-c%E1%BA%A7n-thi%E1%BA%BFt-%C4%91%E1%BB%83-h%E1%BA%A1n-ch%E1%BA%BF-b%E1%BB%8B-t%E1%BA%A5n-c%C3%B4ng)
+
+Các dự án có quy tắc set prefix cụ thể thì sẽ cần đảm bảo các function sử dụng bắt đầu bằng các prefix function.
+
+[Xem thêm](https://github.com/codetot-web/dev-guideline/blob/main/wordpress-php.md#sanitizationescaping-c%C3%A1c-gi%C3%A1-tr%E1%BB%8B-khi-c%E1%BA%A7n-thi%E1%BA%BFt-%C4%91%E1%BB%83-h%E1%BA%A1n-ch%E1%BA%BF-b%E1%BB%8B-t%E1%BA%A5n-c%C3%B4ng)
+
+Hạn chế việc output HTML trong biến của PHP để hạn chế code quét security level cao
+
+[Xem thêm](https://github.com/codetot-web/dev-guideline/blob/main/wordpress-php.md#lo%E1%BA%A1i-b%E1%BB%8F-html-kh%E1%BB%8Fi-echo-trong-php)
