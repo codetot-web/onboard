@@ -176,6 +176,33 @@ Và escape cho post_content:
 echo wp_kses_post( $post_content );
 ```
 
+### Loại bỏ HTML khỏi echo trong PHP
+
+Bởi vì chỉ có dữ liệu mới nên được `escape/sanitize`, các function chỉ return ra HTML cần loại bỏ các đoạn mã HTML nằm bên trong `echo` vì có thể gây hiểu nhầm khi quét code là đoạn có mức độ security cao (do không `esc_html` được).
+
+```php
+<?php
+
+foreach ($items as $item) : ?>
+  <li>
+    <a href="<?php echo esc_url( $item['url']); ?>"><?php echo esc_html( $item['name'] ); ?></a>
+  </li>
+<?php endforeach; ?>
+```
+
+Ngoài ra, khi sử dụng các biến truyền placeholder, ví dụ `sprintf()` cũng không truyền HTML vào.
+
+```php
+<?php
+$time = esc_html__('1 hour', 'theme-prefix');
+$views_ago = sprintf(esc_html__('%s ago', 'theme-prefix'), $time);
+?>
+
+<?php if ( !empty( $time) ) : ?>
+  <span><?php echo esc_html( $views_ago ); ?></span>
+<?php endif;
+```
+
 ## Output kết quả sớm nhất cho function thực thi
 
 ```php
