@@ -176,3 +176,9 @@ MobileFiltersApp.propTypes = {
 	defaultSettings: PropTypes.object
 }
 ```
+
+Nếu dữ liệu truyền vào sai, có thể sẽ thấy trên console log:
+
+```js
+TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+```
