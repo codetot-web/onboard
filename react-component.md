@@ -152,3 +152,27 @@ const exampleComponent = props => {
   )
 }
 ```
+
+### Sử dụng `PropTypes`
+
+Tương tự như `Typescript`, React có thư viện `PropTypes` giúp kiểm tra các dữ liệu truyền vào có đúng định dạng (vd number, string, array, object) không giúp giảm thiểu code lỗi. Điều này giúp hạn chế việc truyền sai kiểu dữ liệu, hoặc truyền vào nhưng chưa format dữ liệu theo đúng định dạng quy ước.
+
+Tham khảo: https://reactjs.org/docs/typechecking-with-proptypes.html
+
+Cài với npm
+
+```
+npm install --save prop-types
+```
+
+Dùng trong dự án ví dụ:
+
+```js
+import PropTypes from 'prop-types'
+
+const MobileFiltersApp = props => {}
+
+MobileFiltersApp.propTypes = {
+	defaultSettings: PropTypes.object
+}
+```
