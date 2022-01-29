@@ -6,7 +6,7 @@ Tài liệu tham khảo: https://developer.wordpress.org/plugins/cron/
 
 - Cron Job dựa theo action page load của người dùng/bot.
 
-> Đó là lý do tại sao nhiều người khuyên set disable cron mặc định của WordPress, và set access bằng cron cố định do công cụ hosting cung cấp.
+> Đó là lý do tại sao nhiều người khuyên set disable cron mặc định của WordPress, và [set access bằng cron cố định](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#set-cron-job-hosting-thay-v%C3%AC-s%E1%BB%AD-d%E1%BB%A5ng-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh) do công cụ hosting cung cấp.
 
 - Cron Job được set không có nghĩa là 100% sẽ chạy ở thời điểm dự kiến, mà thực tế được xếp hàng (queue) và chạy ở thời điểm page load tiếp theo.
 
