@@ -3,6 +3,7 @@
 Tài liệu tham khảo: https://developer.wordpress.org/plugins/cron/
 
 - [Những điểm lưu ý chính](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#nh%E1%BB%AFng-%C4%91i%E1%BB%83m-l%C6%B0u-%C3%BD-ch%C3%ADnh)
+- [Debug Cron Job](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#debug-cron-job)
 - [Tạo cron job đầu tiên](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#t%E1%BA%A1o-cron-job-%C4%91%E1%BA%A7u-ti%C3%AAn)
 - [Xóa cron job khi không sử dụng](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#x%C3%B3a-cron-job-khi-kh%C3%B4ng-s%E1%BB%AD-d%E1%BB%A5ng)
 - [Set cron job hosting thay vì sử dụng mặc định](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#set-cron-job-hosting-thay-v%C3%AC-s%E1%BB%AD-d%E1%BB%A5ng-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh)
