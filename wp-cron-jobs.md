@@ -2,6 +2,11 @@
 
 Tài liệu tham khảo: https://developer.wordpress.org/plugins/cron/
 
+- [Những điểm lưu ý chính](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#nh%E1%BB%AFng-%C4%91i%E1%BB%83m-l%C6%B0u-%C3%BD-ch%C3%ADnh)
+- [Tạo cron job đầu tiên](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#t%E1%BA%A1o-cron-job-%C4%91%E1%BA%A7u-ti%C3%AAn)
+- Xóa cron job
+- [Set cron job hosting thay vì sử dụng mặc định](https://github.com/codetot-web/dev-guideline/blob/main/wp-cron-jobs.md#set-cron-job-hosting-thay-v%C3%AC-s%E1%BB%AD-d%E1%BB%A5ng-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh)
+
 ## Những điểm lưu ý chính
 
 - Cron Job dựa theo action page load của người dùng/bot.
@@ -11,6 +16,8 @@ Tài liệu tham khảo: https://developer.wordpress.org/plugins/cron/
 - Cron Job được set không có nghĩa là 100% sẽ chạy ở thời điểm dự kiến, mà thực tế được xếp hàng (queue) và chạy ở thời điểm page load tiếp theo.
 
 > Hiểu nôm na, giả sử ta lên lịch hàng ngày backup vào 7:00, nhưng thời điểm đó KHÔNG có người/bot truy cập, thì khi lần tiếp theo có truy cập (ví dụ 07:05), hệ thống sẽ thực thi cả những action cron nào chưa chạy.
+
+- Cron Job nếu không dùng thì cần viết function để xóa cron tránh trường hợp cron job thừa chạy tốn tài nguyên.
 
 ## Tạo Cron Job đầu tiên
 
@@ -28,17 +35,10 @@ Mặc định WordPress cung cấp sẵn: `hourly`, `twicedaily`, `daily`, `week
 **Code mẫu toàn bộ**
 
 ```php
-add_action('init', 'ct_cron_jobs_init');
-
-function ct_cron_jobs_init()
-{
-	if (!wp_next_scheduled('ct_cron_job_example')) {
-		// Schedule the event
-		wp_schedule_event(time(), '2minutes', 'ct_cron_job_example');
-	}
-}
-
 add_filter('cron_schedules', 'ct_cron_schedules');
+/**
+ * Set khung giờ riêng (2 phút/lần)
+ */
 function ct_cron_schedules($schedules)
 {
 	// Default: hourly, twicedaily, daily, weekly
@@ -51,7 +51,23 @@ function ct_cron_schedules($schedules)
 	return $schedules;
 }
 
+add_action('init', 'ct_cron_jobs_init');
+/**
+  * Tạo cron job, thực ra là chạy cron với do_action('ct_cron_job_example')
+  */
+function ct_cron_jobs_init()
+{
+	if (!wp_next_scheduled('ct_cron_job_example')) {
+		// Schedule the event
+		wp_schedule_event(time(), '2minutes', 'ct_cron_job_example');
+	}
+}
+
 add_action('ct_cron_job_example', 'ct_cron_job_run_action');
+
+/**
+  * Thực thi 1 function cụ thể mỗi khi do_action('ct_cron_job_example') chạy
+  */
 function ct_cron_job_run_action()
 {
 	error_log(__FUNCTION__ . ':: Run with timestamp ' . time());
@@ -75,6 +91,18 @@ Kết quả nhận được trong file `wp-content/debug.log`
 [29-Jan-2022 14:07:50 UTC] ct_cron_job_run_action:: Run with timestamp 1643465270
 [29-Jan-2022 14:09:51 UTC] ct_cron_job_run_action:: Run with timestamp 1643465391
 [29-Jan-2022 14:11:52 UTC] ct_cron_job_run_action:: Run with timestamp 1643465512
+```
+
+## Xóa action khi không sử dụng
+
+Khi không có sử dụng nữa, hãy xóa action đi. Xóa action thì tất cả function đang chèn vào nó sẽ không hoạt động.
+
+```php
+delete_action( 'ct_cron_job_example', 'ct_cron_jobs_deactivate_hook' );
+// clean the scheduler
+function ct_cron_jobs_deactivate_hook() {
+  wp_clear_scheduled_hook( 'ct_cron_job_example' );
+}
 ```
 
 ## Set cron job hosting thay vì sử dụng mặc định
