@@ -58,6 +58,25 @@ function ct_cron_job_run_action()
 }
 ```
 
+Kết quả nhận được trong file `wp-content/debug.log`
+
+```
+[29-Jan-2022 13:46:06 UTC] ct_cron_job_run_action:: Run with timestamp1643463966
+[29-Jan-2022 13:46:28 UTC] ct_cron_job_run_action:: Run with timestamp1643463988
+[29-Jan-2022 13:48:11 UTC] ct_cron_job_run_action:: Run with timestamp 1643464091
+[29-Jan-2022 13:50:33 UTC] ct_cron_job_run_action:: Run with timestamp 1643464233
+[29-Jan-2022 13:52:35 UTC] ct_cron_job_run_action:: Run with timestamp 1643464355
+[29-Jan-2022 13:54:36 UTC] ct_cron_job_run_action:: Run with timestamp 1643464476
+[29-Jan-2022 13:56:37 UTC] ct_cron_job_run_action:: Run with timestamp 1643464597
+[29-Jan-2022 13:58:38 UTC] ct_cron_job_run_action:: Run with timestamp 1643464718
+[29-Jan-2022 14:00:27 UTC] ct_cron_job_run_action:: Run with timestamp 1643464827
+[29-Jan-2022 14:02:47 UTC] ct_cron_job_run_action:: Run with timestamp 1643464967
+[29-Jan-2022 14:05:49 UTC] ct_cron_job_run_action:: Run with timestamp 1643465149
+[29-Jan-2022 14:07:50 UTC] ct_cron_job_run_action:: Run with timestamp 1643465270
+[29-Jan-2022 14:09:51 UTC] ct_cron_job_run_action:: Run with timestamp 1643465391
+[29-Jan-2022 14:11:52 UTC] ct_cron_job_run_action:: Run with timestamp 1643465512
+```
+
 ## Set cron job hosting thay vì sử dụng mặc định
 
 Xem tài liệu: https://developer.wordpress.org/plugins/cron/hooking-wp-cron-into-the-system-task-scheduler/
