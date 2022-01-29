@@ -19,6 +19,12 @@ Tài liệu tham khảo: https://developer.wordpress.org/plugins/cron/
 
 - Cron Job nếu không dùng thì cần viết function để xóa cron tránh trường hợp cron job thừa chạy tốn tài nguyên.
 
+## Debug Cron Job
+
+Sử dụng plugin [WP Crontrol](https://vi.wordpress.org/plugins/wp-crontrol/) là cách tốt nhất để xem bằng giao diện admin trông như thế nào.
+
+![Ảnh plugin](https://ps.w.org/wp-crontrol/assets/screenshot-1.png)
+
 ## Tạo Cron Job đầu tiên
 
 Dưới đây là 1 cron job đầu tiên, bao gồm các function custom sau:
