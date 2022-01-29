@@ -93,7 +93,7 @@ Kết quả nhận được trong file `wp-content/debug.log`
 [29-Jan-2022 14:11:52 UTC] ct_cron_job_run_action:: Run with timestamp 1643465512
 ```
 
-## Xóa action khi không sử dụng
+## Xóa cron job khi không sử dụng
 
 Khi không có sử dụng nữa, hãy xóa action đi. Xóa action thì tất cả function đang chèn vào nó sẽ không hoạt động.
 
