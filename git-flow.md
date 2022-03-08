@@ -2,6 +2,14 @@
 
 Sử dụng Git giúp quản lý các phiên bản nâng cấp của web ổn định và có thể khôi phục, xem các thay đổi trước khi phát hành.
 
+## Cấu hình khi cài đặt
+
+```
+git config --global user.name "Ten + ho"
+git config --global user.email "email-cua-ban@codetot.com"
+git config --global core.autocrlf false
+```
+
 ## Commit
 
 ### Commit phải sử dụng tiếng Anh
