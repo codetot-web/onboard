@@ -6,6 +6,7 @@ Nếu bạn mới gia nhập công ty:
 
 - [Onboard tài liệu tham khảo](onboard.md)
 - [Quy trình làm việc với Git](git-flow.md)
+- [Cài đặt dự án WordPress bằng LocalWP](localwp.md)
 
 Các vấn đề chuyên môn khác:
 
