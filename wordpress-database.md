@@ -7,7 +7,7 @@
 
 ## Đổi mật khẩu tài khoản trong MySQL
 
-Trường hợp không đăng nhập được vào /wp-admin do không nhớ mật khẩu.
+Trường hợp không đăng nhập được vào http://[website.test]/wp-admin do không nhớ mật khẩu.
 
 1. Chọn dự án / tìm tab Database / click vào "Open Adminer"
 2. Tìm table `wp_users` hoặc `xxx_users`
